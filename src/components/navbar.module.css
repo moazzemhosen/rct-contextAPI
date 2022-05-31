@@ -1,0 +1,24 @@
+.Flex{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    margin: auto;
+    background-color: green;
+    color: black;
+}
+
+.light{
+    background-color: white;
+    color: black;
+    height: 100vh;
+}
+
+.dark{
+    background-color: darkgrey;
+    color: rgb(216, 26, 26);
+    height: 100vh;
+}
+.App {
+    text-align: center;
+}

@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+
+import { useContext } from 'react';
 import './App.css';
+import Body from './components/Body';
+import Navbar from './components/Navbar';
+import { ThemeContext } from './context/ThemeContext';
+import styles from './components/navbar.module.css'
+import { AuthContext } from './context/AuthContext';
+
 
 function App() {
+  const { theme } = useContext(ThemeContext)
+   const { isAuth } = useContext(AuthContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={theme ? styles.dark: styles.light}>
+      <Navbar />
+      {isAuth ? <Body/> : null }
+      
     </div>
   );
 }
